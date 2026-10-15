@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         if (typeof supabase === 'undefined') {
-            throw new Error('Библиотека Supabase не загружена');
+            throw new Error('Библиотека Supabase не найдена');
         }
 
         const { createClient } = supabase;
@@ -45,6 +45,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Ошибка:', error);
         statusDiv.textContent = 'Ошибка: ' + error.message;
         statusDiv.style.color = '#f85149';
-        tbody.innerHTML = `<tr><td colspan="5" class="empty-row" style="color: #f85149;">Ошибка загрузки. Проверьте консоль (F12).</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="5" class="empty-row" style="color: #f85149;">Не удалось загрузить данные. Проверьте RLS в Supabase.</td></tr>`;
     }
 });
