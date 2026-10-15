@@ -3,48 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Управление таблицей products</title>
+    <title>Таблица products</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Подключаем клиент Supabase через CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Таблица продуктов</h1>
-        
-        <div class="section">
-            <h2>Структура таблицы (information_schema)</h2>
-            <div id="schema-loader" class="loader">Загрузка структуры...</div>
-            <div class="table-container">
-                <table id="schema-table" style="display: none;">
-                    <thead>
-                        <tr>
-                            <th>Поле (Column)</th>
-                            <th>Тип данных (Type)</th>
-                            <th>По умолчанию (Default)</th>
-                            <th>Null?</th>
-                        </tr>
-                    </thead>
-                    <tbody id="schema-tbody"></tbody>
-                </table>
-            </div>
+        <div class="header-card">
+            <h1>Структура и данные таблицы: products</h1>
+            <div id="connection-status" class="status-success">Загрузка данных...</div>
         </div>
 
         <div class="section">
-            <h2>Данные таблицы (products)</h2>
-            <div id="data-loader" class="loader">Загрузка данных...</div>
+            <h2>Список товаров</h2>
             <div class="table-container">
-                <table id="products-table" style="display: none;">
+                <table id="products-table">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Название</th>
-                            <th>Цена</th>
-                            <th>Количество</th>
-                            <th>Итого</th>
+                            <th>Название (name)</th>
+                            <th>Цена (price)</th>
+                            <th>Количество (quantity)</th>
+                            <th>Итого (total)</th>
                         </tr>
                     </thead>
-                    <tbody id="products-tbody"></tbody>
+                    <tbody id="products-tbody">
+                        <tr>
+                            <td colspan="5" class="empty-row">Загрузка...</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
